@@ -3,3 +3,6 @@ uvicorn
 mysql-connector-python
 pydantic
 python-dotenv
+bcrypt
+python-decouple
+resend

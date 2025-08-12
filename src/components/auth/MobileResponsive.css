@@ -1,0 +1,586 @@
+/* Mobile Responsive Styles for Auth Components */
+/* This file handles mobile-specific styling for Profile, Interests, and Profession forms */
+
+/* Mobile Base Styles (up to 768px) */
+@media (max-width: 768px) {
+  /* Profile Setup Mobile */
+  .formSection.fullWidth {
+    background: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    min-height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(2vh, 4vh, 6vh) clamp(4vw, 6vw, 8vw);
+    box-sizing: border-box;
+  }
+
+  /* Mobile Logo */
+  .formSection.fullWidth::before {
+    content: 'LawVriksh';
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    color: #fff;
+    font-size: clamp(1.8rem, 5vw, 2.2rem);
+    font-weight: 300;
+    text-align: center;
+    letter-spacing: 0.5px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    position: relative;
+    display: block;
+    margin-bottom: clamp(2rem, 5vw, 3rem);
+    z-index: 2;
+  }
+
+  .formSection.fullWidth::after {
+    content: '';
+    position: absolute;
+    top: clamp(6rem, 12vw, 8rem);
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(60px, 15vw, 80px);
+    height: 2px;
+    background-color: #D4AF37;
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+    z-index: 2;
+  }
+
+  .formSection.fullWidth .formContainer {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: clamp(16px, 4vw, 24px);
+    padding: clamp(2.5rem, 7vw, 4rem);
+    border: none;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: min(90vw, 420px);
+    margin: 0 auto;
+    position: relative;
+    min-height: auto;
+    margin-top: clamp(1rem, 3vw, 2rem);
+  }
+
+  .formSection.fullWidth h2 {
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: clamp(2.5rem, 8vw, 3.2rem) !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem) !important;
+    color: #000000 !important;
+    line-height: 1.1 !important;
+  }
+
+  .formSection.fullWidth .subtitle {
+    font-family: Arial, sans-serif !important;
+    color: #666666 !important;
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    margin-bottom: clamp(3rem, 6vw, 4rem) !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  /* Profile Input Styles */
+  .formSection.fullWidth .NameInput {
+    width: 100%;
+    max-width: 90%;
+    margin-bottom: clamp(3rem, 6vw, 4rem);
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: clamp(1.2rem, 4vw, 1.5rem) clamp(1.5rem, 5vw, 2rem) !important;
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+    border-radius: clamp(20px, 5vw, 25px) !important;
+    background-color: #f8f9fa !important;
+    border: none !important;
+    color: #333 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"]:focus {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+  }
+
+  .formSection.fullWidth .NameButton {
+    position: static;
+    margin-top: clamp(2rem, 5vw, 3rem);
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+    width: auto;
+    min-width: clamp(100px, 25vw, 140px);
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    border-radius: clamp(8px, 2vw, 12px);
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  /* Interests Mobile Styles */
+  .interestsGrid {
+    gap: clamp(1.5rem, 4vw, 2rem);
+    margin: clamp(2rem, 5vw, 3rem) 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .interestsGrid .row {
+    gap: clamp(0.8rem, 2.5vw, 1.2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+
+  .interestBubble {
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.2rem, 4vw, 1.5rem);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    border-radius: clamp(18px, 4vw, 22px);
+    background-color: #f8f9fa;
+    color: #333;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    min-width: fit-content;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .interestBubble:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .interestBubble.selected {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .interestBubble.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+    color: #999;
+  }
+
+  .interestBubble.disabled:hover {
+    transform: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+  }
+
+  .selectionCounter {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    color: #666;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+  }
+
+  /* Form Actions Mobile */
+  .formActions {
+    position: static;
+    margin-top: clamp(3rem, 6vw, 4rem);
+    justify-content: flex-end;
+    gap: clamp(0.8rem, 2.5vw, 1rem);
+    display: flex;
+    width: 100%;
+  }
+
+  .formActions .backButton,
+  .formActions .loginButton {
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    border-radius: clamp(8px, 2vw, 12px);
+    min-width: clamp(80px, 20vw, 120px);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+  }
+
+  .formActions .backButton {
+    background-color: #f8f9fa;
+    color: #333;
+    border: none;
+  }
+
+  .formActions .backButton:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+  }
+
+  .formActions .loginButton {
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+  }
+
+  .formActions .loginButton:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+  }
+
+  /* Profession Mobile Styles */
+  .professionGrid {
+    gap: clamp(1.5rem, 4vw, 2rem);
+    margin: clamp(2rem, 5vw, 3rem) 0;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .professionGrid .row {
+    gap: clamp(0.8rem, 2.5vw, 1.2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+    display: flex;
+    width: 100%;
+  }
+
+  .professionBubble {
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.2rem, 4vw, 1.5rem);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    border-radius: clamp(18px, 4vw, 22px);
+    background-color: #f8f9fa;
+    color: #333;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    min-width: fit-content;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    text-align: center;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .professionBubble:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+
+  .professionBubble.selected {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .formSection.fullWidth {
+    padding: clamp(1vh, 3vh, 5vh) clamp(5vw, 7vw, 9vw);
+  }
+
+  .formSection.fullWidth .formContainer {
+    max-width: min(95vw, 380px);
+    padding: clamp(2rem, 6vw, 3.5rem);
+    border-radius: clamp(14px, 3.5vw, 20px);
+  }
+
+  .formSection.fullWidth h2 {
+    font-size: clamp(2rem, 7vw, 2.8rem);
+    margin-bottom: clamp(1.2rem, 3.5vw, 1.8rem);
+  }
+
+  .formSection.fullWidth .subtitle {
+    font-size: clamp(0.8rem, 2.8vw, 1rem);
+    margin-bottom: clamp(2.5rem, 5.5vw, 3.5rem);
+  }
+
+  .formSection.fullWidth .NameInput {
+    margin-bottom: clamp(2.5rem, 5.5vw, 3.5rem);
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"] {
+    padding: clamp(1rem, 3.5vw, 1.3rem) clamp(1.3rem, 4.5vw, 1.8rem) !important;
+    font-size: clamp(0.9rem, 2.8vw, 1.1rem) !important;
+    border-radius: clamp(18px, 4.5vw, 23px) !important;
+  }
+
+  .formSection.fullWidth .NameButton {
+    margin-top: clamp(1.8rem, 4.5vw, 2.5rem);
+    min-width: clamp(90px, 23vw, 130px);
+    padding: clamp(0.7rem, 2.8vw, 0.9rem) clamp(1.3rem, 3.5vw, 1.8rem);
+    font-size: clamp(0.85rem, 2.3vw, 0.95rem);
+  }
+
+  /* Interests Small Mobile */
+  .interestsGrid {
+    gap: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin: clamp(1.8rem, 4.5vw, 2.5rem) 0;
+  }
+
+  .interestsGrid .row {
+    gap: clamp(0.6rem, 2vw, 1rem);
+  }
+
+  .interestBubble {
+    padding: clamp(0.7rem, 2.8vw, 0.9rem) clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+    border-radius: clamp(16px, 3.5vw, 20px);
+  }
+
+  .selectionCounter {
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+    margin-bottom: clamp(0.8rem, 2.8vw, 1.2rem);
+  }
+
+  .formActions {
+    margin-top: clamp(2.5rem, 5.5vw, 3.5rem);
+    gap: clamp(0.6rem, 2.3vw, 1rem);
+  }
+
+  .formActions .backButton,
+  .formActions .loginButton {
+    padding: clamp(0.7rem, 2.8vw, 0.9rem) clamp(1.3rem, 3.5vw, 1.8rem);
+    font-size: clamp(0.85rem, 2.3vw, 0.95rem);
+    min-width: clamp(70px, 18vw, 110px);
+    border-radius: clamp(6px, 1.8vw, 10px);
+  }
+
+  /* Profession Small Mobile */
+  .professionGrid {
+    gap: clamp(1.2rem, 3.5vw, 1.8rem);
+    margin: clamp(1.8rem, 4.5vw, 2.5rem) 0;
+  }
+
+  .professionGrid .row {
+    gap: clamp(0.6rem, 2vw, 1rem);
+  }
+
+  .professionBubble {
+    padding: clamp(0.7rem, 2.8vw, 0.9rem) clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+    border-radius: clamp(16px, 3.5vw, 20px);
+  }
+}
+
+/* Extra Small Mobile (up to 375px) */
+@media (max-width: 375px) {
+  .formSection.fullWidth {
+    padding: 2vh 6vw;
+  }
+
+  .formSection.fullWidth .formContainer {
+    max-width: 340px;
+    padding: 2rem 1.5rem 2.5rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .formSection.fullWidth h2 {
+    font-size: 2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .formSection.fullWidth .subtitle {
+    font-size: 0.8rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.4;
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"] {
+    padding: 1rem 1.3rem !important;
+    font-size: 0.9rem !important;
+    border-radius: 18px !important;
+  }
+
+  .formSection.fullWidth .NameButton {
+    min-width: 90px;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.85rem;
+  }
+
+  .interestBubble,
+  .professionBubble {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 16px;
+  }
+
+  .formActions .backButton,
+  .formActions .loginButton {
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    min-width: 70px;
+  }
+}
+
+/* Landscape Mobile Optimization */
+@media (max-width: 768px) and (orientation: landscape) and (max-height: 500px) {
+  .formSection.fullWidth {
+    padding: 1vh 4vw;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .formSection.fullWidth .formContainer {
+    margin-top: 2vh;
+    padding: 1.5rem 2rem 2rem 2rem;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .formSection.fullWidth h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+  }
+
+  .formSection.fullWidth .subtitle {
+    margin-bottom: 2rem;
+  }
+
+  .formSection.fullWidth .NameInput {
+    margin-bottom: 2rem;
+  }
+
+  .formSection.fullWidth .NameButton {
+    margin-top: 1.5rem;
+  }
+
+  .interestsGrid,
+  .professionGrid {
+    margin: 1.5rem 0;
+    gap: 1.2rem;
+  }
+
+  .formActions {
+    margin-top: 2rem;
+  }
+}
+/* High 
+Priority Mobile Overrides - Ensures mobile design takes precedence */
+@media (max-width: 768px) {
+  /* Force mobile layout for all fullWidth sections */
+  .loginPage.fullBackground .formSection.fullWidth {
+    background: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') no-repeat center center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    padding: clamp(2vh, 4vh, 6vh) clamp(4vw, 6vw, 8vw) !important;
+    box-sizing: border-box !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 2 !important;
+  }
+
+  /* Hide desktop image section on mobile */
+  .loginPage .imageSection {
+    display: none !important;
+  }
+
+  /* Ensure form section takes full width on mobile */
+  .loginPage .formSection {
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  /* Mobile logo styling with higher specificity */
+  .loginPage.fullBackground .formSection.fullWidth::before {
+    content: 'LawVriksh' !important;
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    color: #fff !important;
+    font-size: clamp(1.8rem, 5vw, 2.2rem) !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    position: relative !important;
+    display: block !important;
+    margin-bottom: clamp(2rem, 5vw, 3rem) !important;
+    z-index: 3 !important;
+  }
+
+  /* Mobile logo underline with higher specificity */
+  .loginPage.fullBackground .formSection.fullWidth::after {
+    content: '' !important;
+    position: absolute !important;
+    top: clamp(6rem, 12vw, 8rem) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: clamp(60px, 15vw, 80px) !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3) !important;
+    z-index: 3 !important;
+  }
+
+  /* Mobile form container with higher specificity */
+  .loginPage.fullBackground .formSection.fullWidth .formContainer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: clamp(16px, 4vw, 24px) !important;
+    padding: clamp(2.5rem, 7vw, 4rem) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    width: 100% !important;
+    max-width: min(90vw, 420px) !important;
+    margin: 0 auto !important;
+    position: relative !important;
+    min-height: auto !important;
+    margin-top: clamp(1rem, 3vw, 2rem) !important;
+    z-index: 4 !important;
+  }
+
+  /* Ensure mobile typography takes precedence */
+  .loginPage.fullBackground .formSection.fullWidth h2 {
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: clamp(2.5rem, 8vw, 3.2rem) !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    margin-bottom: clamp(1.5rem, 4vw, 2rem) !important;
+    color: #000000 !important;
+    line-height: 1.1 !important;
+  }
+
+  .loginPage.fullBackground .formSection.fullWidth .subtitle {
+    font-family: Arial, sans-serif !important;
+    color: #666666 !important;
+    font-size: clamp(0.9rem, 3vw, 1.1rem) !important;
+    text-align: center !important;
+    line-height: 1.5 !important;
+    margin-bottom: clamp(3rem, 6vw, 4rem) !important;
+    max-width: 90% !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
