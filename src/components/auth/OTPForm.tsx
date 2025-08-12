@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useRef } from 'react';
+import './OTPForm.css';
 
 interface OTPFormProps {
   title: string;

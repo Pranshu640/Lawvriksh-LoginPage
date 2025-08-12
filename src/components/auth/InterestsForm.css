@@ -1,0 +1,208 @@
+/* Interests Form Styles */
+
+/* Ensure background image is applied to interests page */
+@media (max-width: 768px) {
+  .formSection.fullWidth {
+    background-color: #8B7355 !important;
+    background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
+}
+.interestsGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.interestsGrid .row {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.interestBubble {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 25px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: auto;
+  min-width: fit-content;
+  height: auto;
+}
+
+.interestBubble:hover {
+  background-color: #e9ecef;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.interestBubble.selected {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.interestBubble.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background-color: #f5f5f5;
+  color: #999;
+}
+
+.interestBubble.disabled:hover {
+  transform: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
+}
+
+.selectionCounter {
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+
+/* Responsive interests grid */
+@media (max-width: 1024px) {
+  .interestsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .interestsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+
+  .interestBubble {
+    padding: 1rem;
+    font-size: 0.85rem;
+    min-height: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .interestsGrid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .interestBubble {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+    min-height: 45px;
+  }
+}
+
+/* Interests Mobile Styles */
+@media (max-width: 768px) {
+  .interestsGrid {
+    gap: clamp(1.5rem, 4vw, 2rem);
+    margin: clamp(2rem, 5vw, 3rem) 0;
+    max-width: 100%;
+  }
+
+  .interestsGrid .row {
+    gap: clamp(0.8rem, 2.5vw, 1.2rem);
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .interestBubble {
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.2rem, 4vw, 1.5rem);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    border-radius: clamp(18px, 4vw, 22px);
+    background-color: #f8f9fa;
+    color: #333;
+    border: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    white-space: nowrap;
+    min-width: fit-content;
+  }
+
+  .interestBubble:hover {
+    background-color: #e9ecef;
+    transform: translateY(-1px);
+  }
+
+  .interestBubble.selected {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .interestBubble.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background-color: #f5f5f5;
+    color: #999;
+  }
+
+  .selectionCounter {
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    margin-bottom: clamp(1rem, 3vw, 1.5rem);
+    color: #666;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .interestsGrid .row {
+    gap: 0.6rem;
+  }
+
+  .interestBubble {
+    padding: 0.7rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 18px;
+  }
+}
+
+/* Interests Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .interestsGrid {
+    gap: 2.2rem;
+    margin: 3.5rem 0;
+    max-width: 800px;
+  }
+
+  .interestsGrid .row {
+    gap: 1.3rem;
+  }
+
+  .interestBubble {
+    padding: 1.1rem 2.2rem;
+    font-size: 1rem;
+    border-radius: 23px;
+  }
+
+  .selectionCounter {
+    font-size: 1rem;
+    margin-bottom: 1.3rem;
+  }
+}

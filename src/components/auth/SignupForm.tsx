@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import './SignupForm.css';
 
 interface SignupFormProps {
   email: string;

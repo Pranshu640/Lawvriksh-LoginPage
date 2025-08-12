@@ -1,0 +1,207 @@
+.inputGroup {
+  margin-bottom: 1.5rem;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputGroup label {
+  font-family: Arial, sans-serif;
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 500;
+  color: #000000;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.inputGroup input[type="email"],
+.inputGroup input[type="password"] {
+  font-family: Arial, sans-serif;
+  width: 100%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #f8f9fa;
+  box-sizing: border-box;
+  color: #000000;
+  font-size: 0.95rem;
+}
+
+.passwordInputContainer {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.passwordInputContainer input {
+  padding-right: 3rem;
+}
+
+.passwordToggle {
+  position: absolute;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+  padding: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.passwordToggle:hover {
+  color: #000;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  font-family: Arial, sans-serif;
+}
+
+.options label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.options a {
+  font-family: Arial, sans-serif;
+  color: #000000;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.loginButton {
+  font-family: 'NyghtSerif-LightItalic',Arial, sans-serif;
+  width: 80%;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 1rem auto 0;
+  display: block;
+}
+
+.loginButton:hover {
+  background-color: #333333;
+}
+
+.socialLogin {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.divider {
+  margin: 1.5rem 0;
+  text-align: center;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.divider span {
+  display: block;
+  color: #666;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.divider::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #E0E0E0;
+}
+
+.socialButtons {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  margin-top: 1rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 1.2rem;
+  border: none;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.googleButton {
+  background-color: #ffffff;
+  color: #757575;
+  width: 100px;
+  border: 1px solid #dadce0;
+}
+
+.googleButton:hover {
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.linkedinButton {
+  background-color: #0077B5;
+  width: 100px;
+  color: #ffffff;
+}
+
+.linkedinButton:hover {
+  background-color: #005885;
+  box-shadow: 0 4px 8px rgba(0, 119, 181, 0.3);
+}
+
+.switchMode {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.switchMode p {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+.switchModeButton {
+  background: none;
+  border: none;
+  color: #000000;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.switchModeButton:hover {
+  color: #333;
+}

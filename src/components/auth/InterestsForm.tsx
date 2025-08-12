@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import './InterestsForm.css';
 
 interface InterestsFormProps {
   selectedInterests: string[];

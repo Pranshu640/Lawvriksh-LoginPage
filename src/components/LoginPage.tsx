@@ -7,9 +7,10 @@ import PasswordSetupForm from './auth/PasswordSetupForm';
 import UserSetupForm from './auth/UserSetupForm';
 import InterestsForm from './auth/InterestsForm';
 import ProfessionForm from './auth/ProfessionForm';
-import './LoginPage.css';
-import './auth/MobileResponsive.css';
-import './auth/MobileFix.css';
+import './auth/styles/BaseAuth.css';
+import './auth/styles/MobileAuth.css';
+import './auth/styles/MobilePages.css';
+import './auth/styles/DesktopAuth.css';
 
 type PageMode = 'login' | 'signup' | 'otp-verify' | 'social-confirm' | 'set-password' | 'user-setup' | 'interests' | 'profession';
 
@@ -422,7 +423,7 @@ const LoginPage = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {/* Mobile Logo */}
-        <motion.div 
+        <motion.div
           className="mobileLogoContainer"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

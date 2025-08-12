@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Verdana:wght@400;500;700&family=Roboto:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap');
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +15,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@font-face {
+  font-family: NyghtSerif-LightItalic;
+  src: url('/Fonts/NyghtSerif-LightItalic.woff2') format('woff2'),
+    url('/Fonts/NyghtSerif-LightItalic.woff') format('woff'),
+    url('/Fonts/NyghtSerif-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+
 
 a {
   font-weight: 500;
@@ -42,7 +57,7 @@ button {
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
-  font-family: inherit;
+  font-family: 'NyghtSerif-LightItallic' !important;
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
@@ -70,4 +85,235 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@font-face {
+  font-family: NyghtSerif-LightItalic;
+  src: url('/Fonts/NyghtSerif-LightItalic.woff2') format('woff2'),
+    url('/Fonts/NyghtSerif-LightItalic.woff') format('woff'),
+    url('/Fonts/NyghtSerif-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  background-color: #F7F3ED;
+  color: #000000;
+}
+
+.loginPage {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+.loginPage.fullBackground {
+  background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+}
+
+.progressBar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 6px;
+  background-color: rgba(212, 175, 55, 0.2);
+  z-index: 1;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #D4AF37, #E6C547);
+  box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3);
+  transition: width 0.8s ease-out;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.imageSection {
+  position: relative;
+  width: 55%;
+  height: 100%;
+  background-color: #F7F3ED;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.imageSection img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.imageSection::after {
+  content: '';
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  right: 40px;
+  height: 200px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  pointer-events: none;
+}
+
+.imageText {
+  position: absolute;
+  bottom: 80px;
+  left: 80px;
+  color: white;
+  max-width: 400px;
+  z-index: 2;
+}
+
+.imageText h2 {
+  font-family: 'NyghtSerif-LightItalic', Arial, sans-serif;
+  font-size: 2.2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  margin-top: 0;
+}
+
+.imageText p {
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.9;
+}
+
+.formSection {
+  width: 55%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+.formSection.fullWidth {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.formSection.fullWidth .formContainer {
+  background: rgba(247, 243, 237, 0.95);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 3rem 2.5rem;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  width: 90vw;
+  max-width: 1200px;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 80vh;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.loginForm {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2rem 0;
+}
+
+/* Remove oversized global heading so mobile/desktop scoped typography wins */
+/* .formContainer h2 {
+  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 5.25rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  margin-top: 0;
+  color: #000000;
+  text-align: center;
+  line-height: 1.2;
+} */
+
+.subtitle {
+  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  color: #666;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: center;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.errorMessage {
+  color: #D32F2F;
+  background-color: #FFCDD2;
+  padding: 0.75rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  text-align: center;
+  border: 1px solid #D32F2F;
+}
+
+@media (max-width : 1100px) {
+  .imageText {
+    max-width: 250px;
+  }
+}
+
+.mobileLogoContainer {
+  display: none;
+}
+
+@media (max-width : 768px){
+
+  .formSection{
+    width: 100vw;
+  }
+  
 }

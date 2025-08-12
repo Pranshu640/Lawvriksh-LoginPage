@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import './PasswordSetupForm.css';
 
 interface PasswordSetupFormProps {
   password: string;

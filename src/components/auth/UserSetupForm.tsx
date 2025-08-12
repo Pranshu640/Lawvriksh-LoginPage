@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import './UserSetupForm.css';
 
 interface UserSetupFormProps {
   userName: string;
@@ -22,7 +23,7 @@ const UserSetupForm = ({
       >
         What should we call you?
       </motion.h2>
-      <motion.p 
+      <motion.p
         className="subtitle"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -30,15 +31,15 @@ const UserSetupForm = ({
       >
         This is the last step, we promise! Let us know what name to use on your new profile.
       </motion.p>
-      
-      <motion.form 
+
+      <motion.form
         onSubmit={onSubmit}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         {error && (
-          <motion.p 
+          <motion.p
             className="errorMessage"
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -48,14 +49,13 @@ const UserSetupForm = ({
             {error}
           </motion.p>
         )}
-        
+
         <motion.div
           className="inputGroup NameInput"
           initial={{ opacity: 0, x: -20, height: 0 }}
           animate={{ opacity: 1, x: 0, height: "auto" }}
           transition={{ duration: 0.4, delay: 0.1 }}
         >
-          <label htmlFor="userName">Enter your Name</label>
           <motion.input
             type="text"
             id="userName"
@@ -68,8 +68,8 @@ const UserSetupForm = ({
           />
         </motion.div>
 
-        <motion.button 
-          type="submit" 
+        <motion.button
+          type="submit"
           className="loginButton NameButton"
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}

@@ -1,0 +1,128 @@
+/* Mobile Pages - Import all mobile page styles */
+
+@import './MobileProfile.css';
+@import './MobileInterests.css';
+@import './MobileProfession.css';
+
+/* Additional mobile page utilities and overrides */
+@media (max-width: 768px) {
+  /* Ensure consistent mobile layout across all pages */
+  .formSection.fullWidth {
+    position: relative;
+    width: 100%;
+    /* background removed to allow per-page backgrounds to show */
+    margin: 0;
+  }
+
+  /* Use parent background in full-background modes (user-setup, interests, profession) */
+  .loginPage.fullBackground {
+    background: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+  }
+
+  /* Hide the base mobile logo/underline to avoid duplicates on these pages */
+  .loginPage.fullBackground::before,
+  .loginPage.fullBackground::after {
+    display: none !important;
+  }
+
+  /* Mobile-specific animations for page transitions */
+  .formContainer {
+    animation: slideInUp 0.5s ease-out;
+  }
+
+  @keyframes slideInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mobile touch improvements for all interactive elements */
+  .interestBubble,
+  .professionBubble,
+  .formActions .backButton,
+  .formActions .loginButton,
+  .formSection.fullWidth .NameButton {
+    -webkit-tap-highlight-color: transparent;
+    touch-action: manipulation;
+  }
+
+  /* Mobile accessibility improvements */
+  .interestBubble:focus,
+  .professionBubble:focus,
+  .formActions .backButton:focus,
+  .formActions .loginButton:focus,
+  .formSection.fullWidth .NameButton:focus,
+  .formSection.fullWidth .NameInput input:focus {
+    outline: 2px solid rgba(0, 0, 0, 0.2);
+    outline-offset: 2px;
+  }
+
+  /* Mobile performance optimizations */
+  .formContainer {
+    will-change: transform;
+    transform: translateZ(0);
+  }
+
+  /* Mobile scrolling improvements */
+  .formSection.fullWidth {
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* Hide desktop-specific elements on mobile */
+  .imageSection {
+    display: none !important;
+  }
+
+  /* Ensure mobile pages take full width */
+  .formSection {
+    width: 100% !important;
+  }
+}
+
+/* High contrast mode support for mobile pages */
+@media (prefers-contrast: high) and (max-width: 768px) {
+  .formContainer {
+    background: rgba(255, 255, 255, 1);
+    border: 2px solid #000;
+  }
+
+  .interestBubble,
+  .professionBubble {
+    border: 1px solid #666;
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"] {
+    border: 1px solid #666;
+  }
+}
+
+/* Reduced motion support for mobile pages */
+@media (prefers-reduced-motion: reduce) and (max-width: 768px) {
+  .formContainer {
+    animation: none;
+  }
+
+  .interestBubble,
+  .professionBubble,
+  .formActions .backButton,
+  .formActions .loginButton,
+  .formSection.fullWidth .NameButton {
+    transition: none;
+  }
+
+  .interestBubble:hover,
+  .professionBubble:hover,
+  .formActions .backButton:hover,
+  .formActions .loginButton:hover,
+  .formSection.fullWidth .NameButton:hover {
+    transform: none;
+  }
+}

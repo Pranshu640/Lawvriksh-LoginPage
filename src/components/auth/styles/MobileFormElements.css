@@ -1,0 +1,317 @@
+/* Mobile Form Elements - Input fields, buttons, and form controls */
+
+@media (max-width: 768px) {
+  /* Mobile input groups */
+  .inputGroup {
+    margin-bottom: clamp(1.2rem, 4vw, 1.8rem);
+    text-align: left;
+    width: 100%;
+  }
+
+  /* Mobile input fields */
+  .inputGroup input[type="email"],
+  .inputGroup input[type="password"],
+  .inputGroup input[type="text"] {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #333;
+    border-radius: clamp(8px, 2vw, 12px);
+    transition: all 0.3s ease;
+    width: 100%;
+    padding: clamp(1rem, 3.5vw, 1.2rem);
+    font-size: clamp(0.9rem, 2.8vw, 1rem);
+    box-sizing: border-box;
+  }
+
+  .inputGroup input[type="email"]:focus,
+  .inputGroup input[type="password"]:focus,
+  .inputGroup input[type="text"]:focus {
+    background-color: #ffffff;
+    border-color: #000000;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transform: none;
+  }
+
+  .inputGroup input::placeholder {
+    color: #999;
+    font-style: italic;
+  }
+
+  .inputGroup input[type="email"]:disabled {
+    background-color: #f0f0f0;
+    color: #666;
+    cursor: not-allowed;
+  }
+
+  /* Mobile password toggle */
+  .passwordInputContainer {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .passwordInputContainer input {
+    padding-right: 3rem;
+  }
+
+  .passwordToggle {
+    position: absolute;
+    right: 0.75rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #666;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .passwordToggle:hover {
+    color: #000;
+  }
+
+  /* Mobile OTP inputs */
+  .passcodeInputs {
+    gap: clamp(8px, 2.5vw, 12px);
+    justify-content: center;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: clamp(1rem, 3vw, 1.5rem);
+  }
+
+  .passcodeInputs input {
+    width: clamp(45px, 12vw, 55px);
+    height: clamp(45px, 12vw, 55px);
+    text-align: center;
+    font-size: clamp(1.1rem, 3.5vw, 1.4rem);
+    font-weight: 600;
+    border-radius: clamp(8px, 2vw, 12px);
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    color: #333;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+  }
+
+  .passcodeInputs input:focus {
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transform: none;
+  }
+
+  /* Mobile options section */
+  .options {
+    margin-bottom: clamp(1.5rem, 4vw, 2rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: clamp(0.5rem, 2vw, 1rem);
+  }
+
+  .options label {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.4rem, 1.5vw, 0.6rem);
+  }
+
+  .options input[type="checkbox"] {
+    width: clamp(16px, 4vw, 18px);
+    height: clamp(16px, 4vw, 18px);
+    accent-color: #000000;
+  }
+
+  /* Mobile buttons */
+  .loginButton {
+    font-family: Arial, sans-serif;
+    background: #000000;
+    color: #ffffff;
+    padding: clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.95rem, 2.8vw, 1.1rem);
+    font-weight: 600;
+    border-radius: clamp(8px, 2vw, 12px);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  .loginButton:hover {
+    background: #333333;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  .loginButton:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile social buttons */
+  .socialButtons {
+    display: flex;
+    gap: clamp(0.8rem, 2.5vw, 1rem);
+    justify-content: space-between;
+    margin-top: clamp(1rem, 3vw, 1.5rem);
+    width: 100%;
+  }
+
+  .socialButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(0.4rem, 1.5vw, 0.6rem);
+    padding: clamp(1rem, 3vw, 1.2rem);
+    border: none;
+    border-radius: clamp(8px, 2vw, 12px);
+    font-family: Arial, sans-serif;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .googleButton {
+    background-color: #ffffff;
+    color: #757575;
+    border: 1px solid #dadce0;
+  }
+
+  .googleButton:hover {
+    background-color: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .linkedinButton {
+    background-color: #0077B5;
+    color: #ffffff;
+  }
+
+  .linkedinButton:hover {
+    background-color: #005885;
+    box-shadow: 0 4px 8px rgba(0, 119, 181, 0.3);
+  }
+
+  /* Mobile divider */
+  .divider {
+    margin: clamp(1.5rem, 4vw, 2rem) 0;
+    text-align: center;
+    width: 100%;
+  }
+
+  .divider span {
+    display: block;
+    margin-bottom: clamp(0.5rem, 1.5vw, 0.8rem);
+  }
+
+  .divider::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #E0E0E0;
+  }
+
+  /* Mobile switch mode */
+  .switchMode {
+    margin-top: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+  }
+
+  .switchModeButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-decoration: underline;
+  }
+
+  .switchModeButton:hover {
+    color: #333;
+  }
+
+  /* Mobile resend section */
+  .resendSection {
+    text-align: right;
+    margin: clamp(1rem, 3vw, 1.5rem) 0;
+    width: 100%;
+  }
+}
+
+/* Small mobile form adjustments */
+@media (max-width: 480px) {
+  .inputGroup {
+    margin-bottom: clamp(1rem, 3.5vw, 1.5rem);
+  }
+
+  .inputGroup input[type="email"],
+  .inputGroup input[type="password"],
+  .inputGroup input[type="text"] {
+    padding: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
+  }
+
+  .passcodeInputs {
+    gap: 6px;
+    padding: 0 2px;
+  }
+
+  .passcodeInputs input {
+    width: calc(25% - 4.5px);
+    min-width: 42px;
+    max-width: 55px;
+    height: 48px;
+    font-size: clamp(1rem, 3.5vw, 1.2rem);
+  }
+
+  .loginButton {
+    padding: clamp(0.9rem, 3vw, 1.1rem);
+    font-size: clamp(0.9rem, 2.5vw, 1rem);
+    height: 50px;
+  }
+
+  .socialButton {
+    padding: clamp(0.9rem, 2.8vw, 1.1rem);
+    font-size: clamp(0.8rem, 2.3vw, 0.9rem);
+  }
+}
+
+/* Extra small mobile form adjustments */
+@media (max-width: 375px) {
+  .inputGroup input[type="email"],
+  .inputGroup input[type="password"],
+  .inputGroup input[type="text"] {
+    padding: 0.85rem;
+    font-size: 0.85rem;
+  }
+
+  .passcodeInputs {
+    gap: 5px;
+  }
+
+  .passcodeInputs input {
+    width: calc(25% - 3.75px);
+    min-width: 40px;
+    max-width: 50px;
+    height: 46px;
+    font-size: 1rem;
+  }
+
+  .loginButton {
+    padding: 0.85rem;
+    font-size: 0.9rem;
+    height: 48px;
+  }
+
+  .socialButton {
+    padding: 0.8rem;
+    font-size: 0.8rem;
+  }
+}

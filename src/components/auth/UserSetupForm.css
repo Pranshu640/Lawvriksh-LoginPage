@@ -1,0 +1,230 @@
+/* User Setup Form Specific Styles */
+
+/* Ensure background image is applied to profile setup page */
+@media (max-width: 768px) {
+  .formSection.fullWidth {
+    background-color: #8B7355 !important;
+    background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
+    height: 100vh !important;
+    height: 100dvh !important;
+    width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    /* header vars */
+    --logo-top: clamp(1.25rem, 7vh, 2.75rem);
+    --logo-size: clamp(1.8rem, 5vw, 2.2rem);
+    --logo-gap: clamp(0.5rem, 2.5vw, 0.8rem);
+    padding-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 3.5vw, 1.5rem)) !important;
+    padding-bottom: clamp(1rem, 3.5vw, 1.5rem) !important;
+    padding-left: clamp(1rem, 4vw, 2rem) !important;
+    padding-right: clamp(1rem, 4vw, 2rem) !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    margin: 0 !important;
+  }
+
+  /* Mobile logo for profile page */
+  .formSection.fullWidth::before {
+    content: 'LawVriksh' !important;
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    color: #fff !important;
+    font-size: var(--logo-size) !important;
+    font-weight: 300 !important;
+    text-align: center !important;
+    letter-spacing: 0.5px !important;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+    position: absolute !important;
+    top: var(--logo-top) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 2 !important;
+    width: auto !important;
+    line-height: 1 !important;
+  }
+
+  /* Mobile logo underline */
+  .formSection.fullWidth::after {
+    content: '' !important;
+    position: absolute !important;
+    top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap)) !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: clamp(60px, 15vw, 80px) !important;
+    height: 2px !important;
+    background-color: #D4AF37 !important;
+    box-shadow: 0 2px 4px rgba(212, 175, 55, 0.3) !important;
+    z-index: 2 !important;
+  }
+
+  /* Profile form container */
+  .formSection.fullWidth .formContainer {
+    background: rgba(255, 255, 255, 0.95) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-radius: clamp(16px, 4vw, 24px) !important;
+    padding: clamp(1.5rem, 5.5vw, 2.25rem) !important;
+    border: none !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15) !important;
+    width: 100% !important;
+    max-width: min(92vw, 400px) !important;
+    margin-inline: auto !important;
+    position: relative !important;
+    min-height: auto !important;
+    z-index: 3 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    height: auto !important;
+    margin-top: 0 !important;
+    box-sizing: border-box !important;
+  }
+}
+.formSection.fullWidth .NameInput {
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 4rem;
+}
+
+.formSection.fullWidth .NameInput input[type="text"] {
+  width: 600px !important;
+  max-width: 600px !important;
+  padding: 1.5rem 2rem !important;
+  font-size: 1.1rem !important;
+  text-align: center !important;
+  border: none !important;
+  border-radius: 25px !important;
+  background-color: #f8f9fa !important;
+  color: #333 !important;
+  font-family: Arial, sans-serif !important;
+  box-sizing: border-box !important;
+  margin: 0 auto !important;
+  display: block !important;
+  height: auto !important;
+  min-height: 60px !important;
+}
+
+.formSection.fullWidth .NameInput input[type="text"]:focus {
+  background-color: #ffffff !important;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+  outline: none !important;
+  transform: none !important;
+}
+
+.formSection.fullWidth .NameInput input[type="text"]::placeholder {
+  color: #999 !important;
+  font-style: italic !important;
+}
+
+.formSection.fullWidth .NameButton {
+  position: absolute;
+  bottom: 5rem;
+  right: 3rem;
+  width: auto;
+  min-width: 100px;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+/* Mobile responsive styles for User Setup */
+@media (max-width: 768px) {
+  .formSection.fullWidth .NameInput {
+    width: 80%;
+    margin-bottom: 3rem;
+  }
+
+  .formSection.fullWidth .NameButton {
+    position: static;
+    margin-top: 2rem;
+    margin-left: auto;
+    margin-right: 0;
+    display: block;
+  }
+
+  .formSection.fullWidth h2 {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .formSection.fullWidth .subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+    max-width: 90%;
+  }
+}
+
+/* Profile Setup Mobile Styles */
+@media (max-width: 768px) {
+  .formSection.fullWidth .NameInput {
+    width: 100% !important;
+    max-width: 90% !important;
+    margin-bottom: clamp(3rem, 6vw, 4rem) !important;
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: clamp(1.2rem, 4vw, 1.5rem) clamp(1.5rem, 5vw, 2rem) !important;
+    font-size: clamp(1rem, 3vw, 1.2rem) !important;
+    border-radius: clamp(20px, 5vw, 25px) !important;
+    background-color: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    color: #333 !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    font-family: Arial, sans-serif !important;
+  }
+
+  .formSection.fullWidth .NameInput input[type="text"]:focus {
+    background-color: #ffffff !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+  }
+
+  .formSection.fullWidth .NameButton {
+    position: static !important;
+    margin-top: clamp(2rem, 5vw, 3rem) !important;
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    display: block !important;
+    width: auto !important;
+    min-width: clamp(100px, 25vw, 140px) !important;
+    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2rem) !important;
+    font-size: clamp(0.9rem, 2.5vw, 1rem) !important;
+    border-radius: clamp(8px, 2vw, 12px) !important;
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-family: Arial, sans-serif !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+  }
+}
+
+
+.loginPage.fullBackground {
+  background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  position: relative !important;
+  width: 100vw !important;
+  height: 100vh !important;
+}
