@@ -32,8 +32,6 @@ const LoginPage = () => {
   const [error, setError] = useState('');
   const [, setSocialProvider] = useState<'google' | 'linkedin' | null>(null);
 
-  const api = 'http://127.0.0.1:8000';
-
   // Animation variants
   const containerVariants = {
     hidden: { opacity: 0 },
