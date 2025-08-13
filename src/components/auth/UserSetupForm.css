@@ -199,7 +199,7 @@
 
   .formSection.fullWidth .NameButton {
     position: static !important;
-    margin-top: clamp(2rem, 5vw, 3rem) !important;
+    margin-top: 0 !important;
     margin-left: auto !important;
     margin-right: 0 !important;
     display: block !important;
@@ -227,4 +227,8 @@
   position: relative !important;
   width: 100vw !important;
   height: 100vh !important;
+}
+
+#userName{
+  width: 80vw !important;
 }

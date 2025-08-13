@@ -59,24 +59,37 @@
     z-index: 2;
   }
 
-  /* Profession form container - full-bleed on mobile */
+  /* Profession form container - edge-to-edge white section */
   .formSection.fullWidth .formContainer {
-    background: #ffffff; /* solid for readability */
+    background: #ffffff;
     border-radius: 0;
-    padding: clamp(1rem, 4.5vw, 1.75rem);
+    padding: clamp(2rem, 6vw, 3rem) 0;
     border: none;
     box-shadow: none;
-    width: 100%;
-    max-width: 100%;
+    width: 100vw;
+    max-width: none;
     margin: 0;
     position: relative;
-    min-height: auto;
     z-index: 3;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    height: auto;
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
+    /* Position in middle leaving space for tree background */
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(2rem, 6vh, 4rem));
+    margin-bottom: clamp(2rem, 6vh, 4rem);
+    min-height: calc(100vh - (var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(4rem, 12vh, 8rem)));
+  }
+
+  /* Content wrapper with proper padding inside the edge-to-edge container */
+  .formSection.fullWidth .formContainer .loginForm {
+    width: 100%;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Profession page typography */
@@ -160,6 +173,38 @@
     font-size: clamp(0.95rem, 2.8vw, 1.05rem);
     border-radius: clamp(10px, 3vw, 12px);
     min-width: 0;
+    font-family: Arial, sans-serif;
+    font-weight: 600;
+    height: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .formActions .backButton {
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: #000000;
+  }
+
+  .formActions .backButton:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .formActions .loginButton {
+    border: 1px solid #000000;
+    background-color: #000000;
+    color: #ffffff;
+  }
+
+  .formActions .loginButton:hover {
+    background-color: #333333;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
 }
 

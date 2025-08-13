@@ -1,6 +1,7 @@
 /* Mobile Profile/User Setup Page Styles */
 
 @media (max-width: 768px) {
+
   /* Profile page uses the same base layout as auth pages */
   .formSection.fullWidth {
     background: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') no-repeat center center;
@@ -13,16 +14,14 @@
     width: 100vw;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: stretch;
     justify-content: flex-start;
     /* header vars */
     --logo-top: clamp(1.25rem, 7vh, 2.75rem);
     --logo-size: clamp(1.8rem, 5vw, 2.2rem);
     --logo-gap: clamp(0.5rem, 2.5vw, 0.8rem);
-    padding-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 3.5vw, 1.5rem));
-    padding-bottom: clamp(1rem, 3.5vw, 1.5rem);
-    padding-left: clamp(1rem, 4vw, 2rem);
-    padding-right: clamp(1rem, 4vw, 2rem);
+    padding: 0 !important;
+    margin: 0 !important;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
@@ -31,7 +30,6 @@
     left: 0;
     right: 0;
     bottom: 0;
-    margin: 0;
   }
 
   /* Mobile logo for profile page */
@@ -67,27 +65,38 @@
     z-index: 2;
   }
 
-  /* Profile form container */
+  /* Profile form container - edge-to-edge white section */
   .formSection.fullWidth .formContainer {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-radius: clamp(16px, 4vw, 24px);
-    padding: clamp(1.5rem, 5.5vw, 2.25rem);
+    background: #ffffff;
+    border-radius: 0 !important;
+    padding: clamp(1.5rem, 4vw, 2.5rem) 0;
     border: none;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
-    width: 100%;
-    max-width: min(92vw, 400px);
-    margin-inline: auto;
+    box-shadow: none;
+    width: 100vw !important;
+    max-width: none !important;
+    margin: 0 !important;
     position: relative;
-    min-height: auto;
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: auto;
-    margin-top: 0;
+    align-items: center;
     box-sizing: border-box;
+    /* Position in middle with reduced spacing */
+    flex: 1;
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 2vh, 1.5rem)) !important;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+    min-height: auto;
+  }
+
+  /* Content wrapper with proper padding inside the edge-to-edge container */
+  .formSection.fullWidth .formContainer .loginForm {
+    width: 100%;
+    padding: 0 clamp(1rem, 4vw, 2rem);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   /* Profile page typography */
@@ -172,11 +181,50 @@
   }
 }
 
+/* Specific breakpoint fixes for edge-to-edge layout */
+@media (min-width: 481px) and (max-width: 768px) {
+  .formSection.fullWidth {
+    width: 100vw !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .formSection.fullWidth .formContainer {
+    width: 100vw !important;
+    max-width: none !important;
+    margin: 0 !important;
+    padding: clamp(2rem, 6vw, 3rem) 0 !important;
+    border-radius: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    box-sizing: border-box;
+  }
+
+  .formSection.fullWidth .formContainer .loginForm {
+    width: 100% !important;
+    padding: 0 clamp(1rem, 4vw, 2rem) !important;
+    margin: 0 !important;
+    box-sizing: border-box;
+  }
+}
+
 /* Small mobile adjustments for profile */
 @media (max-width: 480px) {
   .formSection.fullWidth .formContainer {
-    max-width: min(92vw, 360px);
-    padding: clamp(1.25rem, 5vw, 2rem);
+    width: 100vw !important;
+    max-width: none !important;
+    padding: clamp(1rem, 4vw, 1.5rem) 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    flex: 1 !important;
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 2vh, 1.5rem)) !important;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+    min-height: auto !important;
+  }
+
+  .formSection.fullWidth .formContainer .loginForm {
+    padding: 0 clamp(1rem, 4vw, 2rem) !important;
   }
 
   .formSection.fullWidth .NameInput input[type="text"] {
@@ -194,8 +242,19 @@
 /* Extra small mobile for profile */
 @media (max-width: 375px) {
   .formSection.fullWidth .formContainer {
-    max-width: 320px;
-    padding: 1.25rem 1rem 1.75rem 1rem;
+    width: 100vw !important;
+    max-width: none !important;
+    padding: clamp(1rem, 4vw, 1.5rem) 0 !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    flex: 1 !important;
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 2vh, 1.5rem)) !important;
+    margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+    min-height: auto !important;
+  }
+
+  .formSection.fullWidth .formContainer .loginForm {
+    padding: 0 clamp(1rem, 4vw, 2rem) !important;
   }
 
   .formSection.fullWidth .NameInput input[type="text"] {

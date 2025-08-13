@@ -11,6 +11,9 @@ import './auth/styles/BaseAuth.css';
 import './auth/styles/MobileAuth.css';
 import './auth/styles/MobilePages.css';
 import './auth/styles/DesktopAuth.css';
+import './auth/styles/AuthGroup.css';
+import './auth/styles/SetupGroup.css';
+import './auth/styles/GroupSpecific.css';
 
 type PageMode = 'login' | 'signup' | 'otp-verify' | 'social-confirm' | 'set-password' | 'user-setup' | 'interests' | 'profession';
 
@@ -350,9 +353,13 @@ const LoginPage = () => {
     }
   };
 
+  // Determine which group the current mode belongs to
+  const isAuthGroup = ['login', 'signup', 'otp-verify', 'social-confirm', 'set-password'].includes(mode);
+  const isSetupGroup = ['user-setup', 'interests', 'profession'].includes(mode);
+
   return (
     <motion.div
-      className={`loginPage ${showFullBackground ? 'fullBackground' : ''}`}
+      className={`loginPage ${showFullBackground ? 'fullBackground' : ''} ${isAuthGroup ? 'authGroup' : ''} ${isSetupGroup ? 'setupGroup' : ''}`}
       initial="hidden"
       animate="visible"
       variants={containerVariants}
@@ -418,7 +425,7 @@ const LoginPage = () => {
       </AnimatePresence>
 
       <motion.div
-        className={`formSection ${showFullBackground ? 'fullWidth' : ''}`}
+        className={`formSection ${showFullBackground ? 'fullWidth' : ''} ${isAuthGroup ? 'authFormSection' : ''} ${isSetupGroup ? 'setupFormSection' : ''}`}
         variants={itemVariants}
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
@@ -433,7 +440,7 @@ const LoginPage = () => {
         </motion.div>
 
         <motion.div
-          className="formContainer"
+          className={`formContainer ${isAuthGroup ? 'authFormContainer' : ''} ${isSetupGroup ? 'setupFormContainer' : ''}`}
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
