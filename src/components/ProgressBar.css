@@ -39,17 +39,6 @@
 /* Mobile adjustments */
 @media (max-width: 768px) {
   .progressBar {
-    height: clamp(4px, 1vh, 6px);
-  }
-  
-  /* Mobile setup pages - edge-to-edge containers have no border radius */
-  .loginPage.setupGroup .progressBar {
-    border-radius: 0;
-  }
-  
-  /* Mobile auth pages - rounded corners */
-  .loginPage.authGroup .progressBar {
-    border-top-left-radius: clamp(16px, 4vw, 24px);
-    border-top-right-radius: clamp(16px, 4vw, 24px);
+    display: none;
   }
 }
