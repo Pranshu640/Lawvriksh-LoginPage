@@ -35,8 +35,8 @@
     margin: 0;
   }
 
-  button{
-    border-radius: 3px !important;
+  button {
+    border-radius: 3px;
   }
 
   /* Hide desktop image section on mobile */

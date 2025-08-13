@@ -62,7 +62,7 @@
 
   /* Interests form container - compact for 100vh */
   .formSection.fullWidth .formContainer {
-    background: #ffffff;
+    background: #F7F3ED;
     border-radius: 0 !important;
     padding: clamp(0.75rem, 2vh, 1.25rem) 0;
     border: none;
@@ -86,18 +86,7 @@
     overflow-y: auto;
   }
 
-  /* Mobile progress bar positioning within white container */
-  .formSection.fullWidth .formContainer .progressBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: clamp(4px, 1vh, 6px);
-    background-color: rgba(212, 175, 55, 0.2);
-    z-index: 1;
-    border-radius: 0;
-  }
+  /* Progress bar styles handled in index.css */
 
   /* Content wrapper - compact for 100vh */
   .formSection.fullWidth .formContainer .loginForm {
@@ -136,7 +125,7 @@
   }
 
   /* Interests pyramid layout - mobile */
-  .intere​stsGrid {
+  .interestsGrid {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -146,48 +135,48 @@
   }
 
   /* Pyramid structure rows */
-  .intere​stsGrid .row:nth-child(1) { 
+  .interestsGrid .row:nth-child(1) { 
     display: flex; 
     justify-content: center; 
     gap: clamp(0.4rem, 1.2vw, 0.6rem);
     width: 100%;
   }
-  .intere​stsGrid .row:nth-child(1) .intere​stBubble { 
+  .interestsGrid .row:nth-child(1) .interestBubble { 
     width: clamp(5.5rem, 18vw, 7rem); 
   }
 
-  .intere​stsGrid .row:nth-child(2) { 
+  .interestsGrid .row:nth-child(2) { 
     display: flex; 
     justify-content: center; 
     gap: clamp(0.4rem, 1.2vw, 0.6rem);
     width: 100%;
   }
-  .intere​stsGrid .row:nth-child(2) .intere​stBubble { 
+  .interestsGrid .row:nth-child(2) .interestBubble { 
     width: clamp(5rem, 16vw, 6.5rem); 
   }
 
-  .intere​stsGrid .row:nth-child(3) { 
+  .interestsGrid .row:nth-child(3) { 
     display: flex; 
     justify-content: center; 
     gap: clamp(0.4rem, 1.2vw, 0.6rem);
     width: 100%;
   }
-  .intere​stsGrid .row:nth-child(3) .intere​stBubble { 
+  .interestsGrid .row:nth-child(3) .interestBubble { 
     width: clamp(4.5rem, 14vw, 6rem); 
   }
 
-  .intere​stsGrid .row:nth-child(4) { 
+  .interestsGrid .row:nth-child(4) { 
     display: flex; 
     justify-content: center; 
     gap: clamp(0.4rem, 1.2vw, 0.6rem);
     width: 100%;
   }
-  .intere​stsGrid .row:nth-child(4) .intere​stBubble { 
+  .interestsGrid .row:nth-child(4) .interestBubble { 
     width: clamp(4rem, 12vw, 5.5rem); 
   }
 
   /* Interest bubble styling - compact for pyramid */
-  .intere​stBubble {
+  .interestBubble {
     padding: clamp(0.4rem, 1.5vw, 0.6rem) clamp(0.6rem, 2vw, 0.8rem);
     font-size: clamp(0.65rem, 2vw, 0.8rem);
     border-radius: clamp(8px, 2.5vw, 12px);
@@ -209,27 +198,27 @@
     text-overflow: ellipsis;
   }
 
-  .intere​stBubble:hover {
+  .interestBubble:hover {
     background-color: #e9ecef;
     transform: translateY(-1px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   }
 
-  .intere​stBubble.selected {
+  .interestBubble.selected {
     background-color: #000000;
     color: #ffffff;
     border-color: #000000;
     box-shadow: none;
   }
 
-  .intere​stBubble.disabled {
+  .interestBubble.disabled {
     opacity: 0.5;
     cursor: not-allowed;
     background-color: #f5f5f5;
     color: #999;
   }
 
-  .intere​stBubble.disabled:hover {
+  .interestBubble.disabled:hover {
     transform: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     background-color: #f5f5f5;
@@ -246,14 +235,13 @@
 
   /* Form actions - compact for 100vh */
   .formActions {
-    margin-top: clamp(0.6rem, 1.5vh, 0.9rem);
-    margin-bottom: clamp(0.75rem, 2vh, 1.25rem);
+    position: absolute !important;
+    bottom: -10rem !important ;
+    margin-bottom: 5rem;
+    right: 2rem !important;
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end !important;
-    gap: clamp(0.5rem, 1.5vw, 0.75rem);
-    width: 100%;
-    height: clamp(36px, 6vh, 42px);
+    gap: clamp(0.75rem, 1vh, 1rem);
+    justify-content: flex-end;
   }
 
   .formActions .backButton {
@@ -261,7 +249,7 @@
     margin: 0 !important; 
     border: 1px solid #000000;
     border-radius: clamp(6px, 1.5vw, 8px);
-    background-color: #ffffff00;
+    background-color: transparent;
     color: #000000;
     font-family: 'NyghtSerif-LightItalic',Arial, sans-serif !important;
     font-size: clamp(0.75rem, 2vh, 0.9rem);
@@ -286,7 +274,6 @@
     border-radius: clamp(6px, 1.5vw, 8px);
     background-color: #000000;
     color: #ffffff;
-    font-family: Arial, sans-serif;
     font-size: clamp(0.75rem, 2vh, 0.9rem);
     font-weight: 600;
     height: clamp(36px, 6vh, 42px);
@@ -398,40 +385,7 @@
 }
 
 @media (max-width: 360px) {
-  .intere​stsGrid { grid-template-columns: 1fr; }
-}
-
-/* Profession page "Other" button styles */
-.otherButton {
-  width: 100%;
-  max-width: 300px;
-  margin: clamp(1.5rem, 4vw, 2rem) auto 0;
-  padding: clamp(0.9rem, 3vw, 1.1rem);
-  border: 1px solid #000000;
-  border-radius: clamp(10px, 3vw, 12px);
-  background-color: transparent !important;
-  color: #000000;
-  font-family: Arial, sans-serif;
-  font-size: clamp(0.95rem, 2.8vw, 1.05rem);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: block;
-  text-align: center;
-}
-
-.otherButton:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-1px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Desktop profession "Other" button */
-@media (min-width: 769px) {
-  .otherButton {
-    max-width: 200px;
-    margin: 2rem auto 0;
-    padding: 1rem 2rem;
-    font-size: 1rem;
+  .interestsGrid { 
+    grid-template-columns: 1fr; 
   }
 }

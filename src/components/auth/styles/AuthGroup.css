@@ -101,7 +101,7 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: clamp(16px, 4vw, 24px);
+    border-radius: 0;
     padding: clamp(2rem, 6vw, 3rem);
     border: none;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);

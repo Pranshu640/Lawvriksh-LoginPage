@@ -7,6 +7,7 @@ import PasswordSetupForm from './auth/PasswordSetupForm';
 import UserSetupForm from './auth/UserSetupForm';
 import InterestsForm from './auth/InterestsForm';
 import ProfessionForm from './auth/ProfessionForm';
+import ProgressBar from './ProgressBar';
 import './auth/styles/BaseAuth.css';
 import './auth/styles/MobileAuth.css';
 import './auth/styles/MobilePages.css';
@@ -366,24 +367,7 @@ const LoginPage = () => {
       animate="visible"
       variants={containerVariants}
     >
-      <AnimatePresence>
-        {showProgressBar && (
-          <motion.div
-            className="progressBar"
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
-            transition={{ duration: 0.5 }}
-          >
-            <motion.div
-              className="progressFill"
-              initial={{ width: 0 }}
-              animate={{ width: `${getProgress()}%` }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            />
-          </motion.div>
-        )}
-      </AnimatePresence>
+      {/* Progress bar moved inside form container */}
 
       <AnimatePresence>
         {!showFullBackground && (
@@ -432,14 +416,6 @@ const LoginPage = () => {
         transition={{ duration: 0.5, ease: "easeOut" }}
       >
         {/* Mobile Logo */}
-        <motion.div
-          className="mobileLogoContainer"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-        >
-          <h1 className="mobileLogo">LawVriksh</h1>
-        </motion.div>
 
         <motion.div
           className={`formContainer ${isAuthGroup ? 'authFormContainer' : ''} ${isSetupGroup ? 'setupFormContainer' : ''}`}
@@ -447,6 +423,7 @@ const LoginPage = () => {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
+          <ProgressBar progress={getProgress()} isVisible={showProgressBar} />
 
 
           <AnimatePresence mode="wait">

@@ -123,6 +123,7 @@
 
   /* Profession grid mobile layout */
   .professionGrid {
+    padding: 0 !important;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: clamp(0.75rem, 2.8vw, 1rem);
@@ -135,7 +136,6 @@
   /* Profession bubble styling */
   .professionBubble {
     width: 100%;
-    padding: clamp(0.85rem, 3vw, 1.1rem);
     font-size: clamp(0.9rem, 2.6vw, 1rem);
     border-radius: clamp(30px, 3.5vw, 50px) !important;
     background-color: #f8f9fa;
@@ -174,11 +174,9 @@
   .formActions .backButton,
   .formActions .loginButton {
     width: auto;
-    padding: clamp(0.9rem, 3vw, 1.1rem) clamp(1.2rem, 4vw, 1.8rem);
     font-size: clamp(0.95rem, 2.8vw, 1.05rem);
     border-radius: clamp(10px, 3vw, 12px);
     min-width: clamp(80px, 18vw, 110px);
-    font-family: Arial, sans-serif;
     font-weight: 600;
     height: 50px;
     cursor: pointer;
@@ -187,12 +185,6 @@
     align-items: center;
     justify-content: center;
     flex: none;
-  }
-
-  .formActions .backButton {
-    border: 1px solid #000000;
-    background-color: #ffffff;
-    color: #000000;
   }
 
   .formActions .backButton:hover {
@@ -232,7 +224,7 @@
   }
 
   .professionBubble {
-    padding: clamp(0.7rem, 2vh, 0.9rem) clamp(1rem, 3.5vw, 1.3rem);
+    padding: 0;
     font-size: clamp(0.8rem, 2.2vh, 0.9rem);
     border-radius: clamp(16px, 3vw, 20px);
     background-color: #f8f9fa;
@@ -332,7 +324,6 @@
   .professionGrid { gap: clamp(1rem, 3vw, 1.5rem); }
 
   .professionBubble {
-    padding: clamp(0.7rem, 2.5vw, 0.9rem) clamp(1rem, 3vw, 1.3rem);
     font-size: clamp(0.8rem, 2.3vw, 0.95rem);
     border-radius: clamp(14px, 3.5vw, 18px);
   }
@@ -345,7 +336,6 @@
   }
 
   .professionBubble {
-    padding: 0.7rem 1rem;
     font-size: 0.85rem;
     border-radius: 14px;
   }

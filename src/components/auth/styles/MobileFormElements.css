@@ -1,6 +1,7 @@
 /* Mobile Form Elements - Input fields, buttons, and form controls */
 
 @media (max-width: 768px) {
+
   /* Mobile input groups - compact for 100vh */
   .inputGroup {
     margin-bottom: clamp(0.8rem, 2.5vh, 1.2rem);
@@ -147,7 +148,7 @@
 
   /* Mobile buttons - compact for 100vh */
   .loginButton {
-    font-family: Arial, sans-serif;
+    font-family: 'NyghtSerif-LightItalic', Arial, sans-serif;
     background: #000000;
     color: #ffffff;
     padding: clamp(0.75rem, 2.5vh, 1rem);
@@ -308,6 +309,7 @@
 
 /* Extra small mobile form adjustments */
 @media (max-width: 375px) {
+
   .inputGroup input[type="email"],
   .inputGroup input[type="password"],
   .inputGroup input[type="text"] {

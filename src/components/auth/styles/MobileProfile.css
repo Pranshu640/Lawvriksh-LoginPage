@@ -67,7 +67,7 @@
 
   /* Profile form container - edge-to-edge white section */
   .formSection.fullWidth .formContainer {
-    background: #ffffff;
+    background: #F7F3ED !important;
     border-radius: 0 !important;
     padding: clamp(1.5rem, 4vw, 2.5rem) 0;
     border: none;
@@ -89,18 +89,7 @@
     min-height: auto;
   }
 
-  /* Mobile progress bar positioning within white container */
-  .formSection.fullWidth .formContainer .progressBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: clamp(4px, 1vh, 6px);
-    background-color: rgba(212, 175, 55, 0.2);
-    z-index: 1;
-    border-radius: 0;
-  }
+  /* Progress bar styles handled in index.css */
 
   /* Content wrapper with proper padding inside the edge-to-edge container */
   .formSection.fullWidth .formContainer .loginForm {
@@ -177,14 +166,12 @@
     font-size: clamp(0.8rem, 2vh, 0.9rem);
     border-radius: clamp(6px, 1.5vw, 8px);
     border: none;
-    font-family: Arial, sans-serif;
+    font-family: 'NyghtSerif-LightItalic',Arial, sans-serif;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    margin-left: auto;
-    margin-right: 0;
-    margin-bottom: clamp(1rem, 2.5vh, 1.5rem);
-    display: block;
+    position: absolute;
+    bottom: -3rem;
     width: auto;
     min-width: clamp(80px, 20vw, 120px);
     height: clamp(36px, 5vh, 42px);

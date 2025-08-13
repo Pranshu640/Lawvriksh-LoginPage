@@ -27,7 +27,7 @@
   }
 
   .loginPage.setupGroup .formContainer.setupFormContainer {
-    background: rgba(247, 243, 237, 0.95);
+    background: #F7F3ED;
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     padding: clamp(2rem, 3vh, 3rem) clamp(1.5rem, 2.5vh, 2.5rem);
@@ -46,6 +46,8 @@
     min-height: clamp(37.5rem, 60vh, 50rem);
     margin: 0 auto;
   }
+
+  /* Desktop progress bar styles handled in index.css */
 }
 
 /* Mobile Setup Group Styles */
@@ -148,18 +150,7 @@
     overflow-y: auto;
   }
 
-  /* Mobile progress bar positioning within white container */
-  .loginPage.setupGroup .formContainer.setupFormContainer .progressBar {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: clamp(4px, 1vh, 6px);
-    background-color: rgba(212, 175, 55, 0.2);
-    z-index: 1;
-    border-radius: 0;
-  }
+  /* Progress bar styles handled in index.css */
 
   /* Content wrapper with proper padding inside the edge-to-edge container */
   .loginPage.setupGroup .formContainer.setupFormContainer .loginForm {
@@ -178,7 +169,7 @@
   }
 
   /* Ensure content is properly positioned */
-  .loginPage.setupGroup .formContainer.setupFormContainer>* {
+  .loginPage.setupGroup .formContainer.setupFormContainer>*:not(.progressBar) {
     position: relative;
     z-index: 1;
   }
