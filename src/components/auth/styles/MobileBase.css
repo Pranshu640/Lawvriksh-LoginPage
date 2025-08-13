@@ -35,6 +35,10 @@
     margin: 0;
   }
 
+  button{
+    border-radius: 3px !important;
+  }
+
   /* Hide desktop image section on mobile */
   .imageSection {
     display: none !important;
@@ -90,7 +94,6 @@
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-radius: clamp(16px, 4vw, 24px);
     padding: clamp(1.5rem, 5.5vw, 2.25rem);
     border: none;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
@@ -149,7 +152,6 @@
   .formContainer {
     max-width: min(92vw, 360px);
     padding: clamp(1.25rem, 5vw, 2rem);
-    border-radius: clamp(14px, 3.5vw, 20px);
   }
 }
 
@@ -162,7 +164,6 @@
   .formContainer {
     max-width: 320px;
     padding: 1.25rem 1rem 1.75rem 1rem;
-    border-radius: 16px;
   }
 }
 

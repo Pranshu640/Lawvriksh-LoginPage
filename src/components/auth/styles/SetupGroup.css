@@ -30,19 +30,21 @@
     background: rgba(247, 243, 237, 0.95);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
-    padding: 3rem 2.5rem;
+    padding: clamp(2rem, 3vh, 3rem) clamp(1.5rem, 2.5vh, 2.5rem);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-    width: 90vw;
-    max-width: 1200px;
-    min-width: 500px;
+    width: clamp(50rem, 70vw, 75rem);
+    max-width: 75rem;
+    min-width: 25rem;
     text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: clamp(0.75rem, 1vh, 1.25rem);
     position: relative;
     z-index: 3;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    min-height: 80vh;
+    min-height: clamp(37.5rem, 60vh, 50rem);
+    margin: 0 auto;
   }
 }
 
@@ -58,10 +60,10 @@
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
-    /* Header positioning variables */
-    --logo-top: clamp(1.25rem, 7vh, 2.75rem);
-    --logo-size: clamp(1.8rem, 5vw, 2.2rem);
-    --logo-gap: clamp(0.5rem, 2.5vw, 0.8rem);
+    /* Compact header positioning variables for 100vh fit */
+    --logo-top: clamp(0.75rem, 3vh, 1.5rem);
+    --logo-size: clamp(1.2rem, 3.5vw, 1.6rem);
+    --logo-gap: clamp(0.3rem, 1.5vw, 0.5rem);
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -120,11 +122,11 @@
     box-sizing: border-box;
   }
 
-  /* Edge-to-edge white container - no rounded corners */
+  /* Edge-to-edge white container - compact for 100vh */
   .loginPage.setupGroup .formContainer.setupFormContainer {
     background: #ffffff;
     border-radius: 0 !important;
-    padding: clamp(1.5rem, 4vw, 2.5rem) 0;
+    padding: clamp(0.75rem, 2vh, 1.25rem) 0;
     border: none;
     box-shadow: none;
     width: 100vw !important;
@@ -137,11 +139,26 @@
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    /* Center the form vertically with reduced spacing */
+    /* Compact positioning for 100vh fit */
     flex: 1;
-    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(1rem, 2vh, 1.5rem)) !important;
-    margin-bottom: clamp(1rem, 2vh, 1.5rem) !important;
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(0.5rem, 1vh, 0.75rem)) !important;
+    margin-bottom: clamp(0.5rem, 1vh, 0.75rem) !important;
     min-height: auto;
+    max-height: calc(100vh - var(--logo-top) - var(--logo-size) - var(--logo-gap) - clamp(1rem, 2vh, 1.5rem));
+    overflow-y: auto;
+  }
+
+  /* Mobile progress bar positioning within white container */
+  .loginPage.setupGroup .formContainer.setupFormContainer .progressBar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: clamp(4px, 1vh, 6px);
+    background-color: rgba(212, 175, 55, 0.2);
+    z-index: 1;
+    border-radius: 0;
   }
 
   /* Content wrapper with proper padding inside the edge-to-edge container */

@@ -64,8 +64,8 @@ const ProfessionForm = ({
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className="row">
-            {professions.map((profession, index) => (
+          <div className="row mainProfessions">
+            {professions.slice(0, 2).map((profession, index) => (
               <motion.button
                 key={profession}
                 type="button"
@@ -81,6 +81,19 @@ const ProfessionForm = ({
               </motion.button>
             ))}
           </div>
+          
+          <motion.button
+            type="button"
+            className={`otherButton ${selectedProfession === 'Other' ? 'selected' : ''}`}
+            onClick={() => onProfessionChange('Other')}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.3, delay: 0.6 }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Other
+          </motion.button>
         </motion.div>
 
         <motion.div 

@@ -11,32 +11,33 @@
     background-attachment: fixed !important;
   }
 }
+/* Desktop Profession Grid */
 .professionGrid {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
   margin: 3rem 0;
   max-width: 900px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.professionGrid .row {
+.professionGrid .row.mainProfessions {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
   flex-wrap: wrap;
 }
 
 .professionBubble {
-  padding: 1rem 2rem;
+  padding: 1.2rem 2.5rem;
   border: none;
-  border-radius: 25px;
+  border-radius: 30px;
   background-color: #f8f9fa;
   color: #333;
   font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  font-size: 0.95rem;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s ease;
   text-align: center;
@@ -46,8 +47,9 @@
   justify-content: center;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   width: auto;
-  min-width: fit-content;
+  min-width: 180px;
   height: auto;
+  font-weight: 400;
 }
 
 .professionBubble:hover {
@@ -62,30 +64,67 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
-/* Profession Mobile Styles */
+/* Other Button - Different Style */
+.otherButton {
+  padding: 1rem 2.5rem;
+  border: 1px solid #000000;
+  border-radius: 50px !important;
+  margin-top: 0px !important;
+  background-color: transparent;
+  color: #000000;
+  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 140px;
+  height: auto;
+  font-weight: 400;
+}
+
+.otherButton:hover {
+  background-color: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.otherButton.selected {
+  background-color: #000000;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Profession Mobile Styles - Compact for 100vh */
 @media (max-width: 768px) {
   .professionGrid {
-    gap: clamp(1.5rem, 4vw, 2rem);
-    margin: clamp(2rem, 5vw, 3rem) 0;
+    gap: clamp(1rem, 3vh, 1.5rem);
+    margin: clamp(1rem, 3vh, 2rem) 0;
     max-width: 100%;
   }
 
-  .professionGrid .row {
-    gap: clamp(0.8rem, 2.5vw, 1.2rem);
+  .professionGrid .row.mainProfessions {
+    gap: clamp(0.75rem, 2.5vw, 1rem);
     flex-wrap: wrap;
     justify-content: center;
   }
 
   .professionBubble {
-    padding: clamp(0.8rem, 3vw, 1rem) clamp(1.2rem, 4vw, 1.5rem);
-    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-    border-radius: clamp(18px, 4vw, 22px);
+    padding: clamp(0.7rem, 2vh, 0.9rem) clamp(1rem, 3.5vw, 1.3rem);
+    font-size: clamp(0.8rem, 2.2vh, 0.9rem);
+    border-radius: clamp(16px, 3vw, 20px);
     background-color: #f8f9fa;
     color: #333;
     border: none;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     white-space: nowrap;
-    min-width: fit-content;
+    min-width: clamp(120px, 30vw, 160px);
+    height: clamp(40px, 6vh, 48px);
+    font-weight: 400;
   }
 
   .professionBubble:hover {
@@ -94,6 +133,39 @@
   }
 
   .professionBubble.selected {
+    background-color: #000000;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  /* Mobile Other Button */
+  .otherButton {
+    padding: clamp(0.6rem, 1.8vh, 0.8rem) clamp(1rem, 3.5vw, 1.3rem);
+    border: 1px solid #000000;
+    border-radius: clamp(16px, 3vw, 20px);
+    background-color: transparent;
+    color: #000000;
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-size: clamp(0.8rem, 2.2vh, 0.9rem);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: clamp(100px, 25vw, 130px);
+    height: clamp(36px, 5vh, 42px);
+    font-weight: 400;
+  }
+
+  .otherButton:hover {
+    background-color: #f8f9fa;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .otherButton.selected {
     background-color: #000000;
     color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
