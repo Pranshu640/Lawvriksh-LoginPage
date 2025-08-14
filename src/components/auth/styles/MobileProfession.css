@@ -1,4 +1,4 @@
-/* Mobile Profession Page Styles */
+/* Mobile Profession Page Styles - Card Design */
 
 @media (max-width: 768px) {
   /* Profession page uses the same base layout - compact for 100vh */
@@ -19,8 +19,8 @@
     --logo-top: clamp(0.75rem, 3vh, 1.5rem);
     --logo-size: clamp(1.2rem, 3.5vw, 1.6rem);
     --logo-gap: clamp(0.3rem, 1.5vw, 0.5rem);
-    padding: 0 !important;
-    margin: 0 !important;
+    padding: 0;
+    margin: 0;
     box-sizing: border-box;
     overflow-x: hidden;
     overflow-y: auto;
@@ -63,13 +63,13 @@
   /* Profession form container - compact for 100vh */
   .formSection.fullWidth .formContainer {
     background: #ffffff;
-    border-radius: 0 !important;
+    border-radius: 0;
     padding: clamp(0.75rem, 2vh, 1.25rem) 0;
     border: none;
     box-shadow: none;
-    width: 100vw !important;
-    max-width: none !important;
-    margin: 0 !important;
+    width: 100vw;
+    max-width: none;
+    margin: 0;
     position: relative;
     z-index: 3;
     display: flex;
@@ -79,8 +79,8 @@
     box-sizing: border-box;
     /* Compact positioning for 100vh fit */
     flex: 1;
-    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(0.5rem, 1vh, 0.75rem)) !important;
-    margin-bottom: clamp(0.5rem, 1vh, 0.75rem) !important;
+    margin-top: calc(var(--logo-top) + var(--logo-size) + var(--logo-gap) + clamp(0.5rem, 1vh, 0.75rem));
+    margin-bottom: clamp(0.5rem, 1vh, 0.75rem);
     min-height: auto;
     max-height: calc(100vh - var(--logo-top) - var(--logo-size) - var(--logo-gap) - clamp(1rem, 2vh, 1.5rem));
     overflow-y: auto;
@@ -121,43 +121,79 @@
     margin-right: auto;
   }
 
-  /* Profession grid mobile layout */
-  .professionGrid {
-    padding: 0 !important;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(0.75rem, 2.8vw, 1rem);
-    margin: clamp(1rem, 3.5vw, 1.5rem) 0;
-    width: 100%;
-  }
-
-  .professionGrid .row { display: contents; }
-
-  /* Profession bubble styling */
-  .professionBubble {
-    width: 100%;
-    font-size: clamp(0.9rem, 2.6vw, 1rem);
-    border-radius: clamp(30px, 3.5vw, 50px) !important;
-    background-color: #f8f9fa;
-    color: #333;
-    border: 1px solid #e9ecef;
-    box-shadow: none;
-    white-space: normal;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    text-align: center;
-    display: inline-flex;
+  /* Mobile profession cards */
+  .professionCards {
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    user-select: none;
+    gap: 0.1rem;
+    margin: clamp(1rem, 3vh, 1.5rem) 0;
+    margin-top: 0;
+    width: 100%;
+    padding: 0 clamp(1rem, 4vw, 2rem);
   }
 
-  .professionBubble.selected {
-    background-color: #000000;
-    color: #ffffff;
-    border-color: #000000;
+  .professionCard {
+    border: 3px solid #e9ecef;
+    border-radius: clamp(16px, 4vw, 20px);
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: clamp(280px, 80vw, 320px); 
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #f8f9fa;
+  }
+
+  /* Simple light overlay for text readability */
+  .professionCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        transparent 70%,
+        rgba(255, 255, 255, 0.9) 100%);
+    z-index: 1;
+  }
+
+  /* Golden border for selected state */
+  .professionCard.selected {
+    border-color: #D4AF37;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+
+  .cardContent {
+    position: absolute;
+    bottom: 0;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 0 clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem) clamp(1rem, 3vw, 1.5rem);
+    box-sizing: border-box;
+  }
+
+  .cardTitle {
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-size: clamp(1.1rem, 3.1vw, 1.5rem);
+    font-weight: 400;
+    color: #333;
+    margin: 0;
+    padding: clamp(0.6rem, 2vw, 0.8rem) clamp(0.8rem, 2.5vw, 1rem);
+    padding-bottom: 0;
+    border-radius: clamp(10px, 2.5vw, 12px);
     box-shadow: none;
+    background: transparent !important;
   }
 
   /* Form actions - right-aligned with natural width */
@@ -169,11 +205,13 @@
     justify-content: flex-end;
     gap: clamp(0.75rem, 2.8vw, 1rem);
     width: 100%;
+    padding-right: clamp(0.5rem, 2vw, 1rem);
   }
 
   .formActions .backButton,
   .formActions .loginButton {
     width: auto;
+    padding: clamp(0.9rem, 3vw, 1.1rem) clamp(1.2rem, 4vw, 1.8rem);
     font-size: clamp(0.95rem, 2.8vw, 1.05rem);
     border-radius: clamp(10px, 3vw, 12px);
     min-width: clamp(80px, 18vw, 110px);
@@ -187,8 +225,13 @@
     flex: none;
   }
 
+  .formActions .backButton {
+    border: 1px solid #000000;
+    background-color: transparent;
+    color: #000000;
+  }
+
   .formActions .backButton:hover {
-    background-color: #f8f9fa;
     transform: translateY(-1px);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
@@ -204,143 +247,56 @@
     transform: translateY(-1px);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
   }
-
-  /* Mobile Profession Grid - compact for 100vh */
-  .professionGrid {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: clamp(1rem, 3vh, 1.5rem);
-    margin: clamp(0.75rem, 2vh, 1rem) 0;
-    width: 100%;
-  }
-
-  .professionGrid .row.mainProfessions {
-    display: flex;
-    justify-content: center;
-    gap: clamp(0.75rem, 2.5vw, 1rem);
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  .professionBubble {
-    padding: 0;
-    font-size: clamp(0.8rem, 2.2vh, 0.9rem);
-    border-radius: clamp(16px, 3vw, 20px);
-    background-color: #f8f9fa;
-    color: #333;
-    border: none;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    white-space: nowrap;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: clamp(120px, 30vw, 160px);
-    height: clamp(40px, 6vh, 48px);
-    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    font-weight: 400;
-  }
-
-  .professionBubble:hover {
-    background-color: #e9ecef;
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  }
-
-  .professionBubble.selected {
-    background-color: #000000;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Mobile Other Button - different style */
-  .otherButton {
-    padding: clamp(0.6rem, 1.8vh, 0.8rem) clamp(1rem, 3.5vw, 1.3rem);
-    border: 1px solid #000000;
-    border-radius: clamp(16px, 3vw, 20px);
-    background-color: transparent;
-    color: #000000;
-    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    font-size: clamp(0.8rem, 2.2vh, 0.9rem);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-    white-space: nowrap;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: clamp(100px, 25vw, 130px);
-    height: clamp(36px, 5vh, 42px);
-    font-weight: 400;
-  }
-
-  .otherButton:hover {
-    background-color: #f8f9fa;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  }
-
-  .otherButton.selected {
-    background-color: #000000;
-    color: #ffffff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  /* Profession page typography - compact for 100vh */
-  .formSection.fullWidth h2 {
-    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-    font-size: clamp(1.2rem, 4vh, 1.6rem);
-    font-weight: 300;
-    text-align: center;
-    margin-bottom: clamp(0.4rem, 1vh, 0.6rem);
-    margin-top: 0;
-    color: #000000;
-    line-height: 1.1;
-  }
-
-  .formSection.fullWidth .subtitle {
-    font-family: Arial, sans-serif;
-    color: #666666;
-    font-size: clamp(0.7rem, 2vh, 0.85rem);
-    text-align: center;
-    line-height: 1.3;
-    margin-bottom: clamp(0.6rem, 1.5vh, 0.9rem);
-    opacity: 1;
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-  }
 }
 
 /* Small mobile adjustments for profession */
 @media (max-width: 480px) {
   .formSection.fullWidth .formContainer {
-    padding: clamp(0.9rem, 4.5vw, 1.2rem);
+    padding: clamp(0.9rem, 4.5vw, 1.2rem) 0;
   }
 
-  .professionGrid { gap: clamp(1rem, 3vw, 1.5rem); }
+  .professionCards {
+    gap: clamp(1rem, 3vw, 1.5rem);
+    padding: 0 clamp(0.75rem, 3vw, 1.5rem);
+  }
 
-  .professionBubble {
-    font-size: clamp(0.8rem, 2.3vw, 0.95rem);
-    border-radius: clamp(14px, 3.5vw, 18px);
+  .professionCard {
+    max-width: clamp(260px, 85vw, 300px);
+    min-height: clamp(180px, 45vw, 220px);
+  }
+
+  .cardContent {
+    padding: 0 clamp(0.8rem, 2.5vw, 1.2rem) clamp(1.2rem, 3.5vw, 1.8rem) clamp(0.8rem, 2.5vw, 1.2rem);
+  }
+
+  .cardTitle {
+    font-size: clamp(1.1rem, 3.1vw, 1.5rem);
+    padding: clamp(0.5rem, 1.8vw, 0.7rem) clamp(0.7rem, 2.2vw, 0.9rem);
   }
 }
 
 /* Extra small mobile for profession */
 @media (max-width: 375px) {
   .formSection.fullWidth .formContainer {
-    padding: 0.9rem 0.9rem 1.2rem 0.9rem;
+    padding: 0.9rem 0 1.2rem 0;
   }
 
-  .professionBubble {
-    font-size: 0.85rem;
-    border-radius: 14px;
+  .professionCards {
+    gap: 1rem;
+    padding: 0 0.75rem;
   }
-}
 
-@media (max-width: 360px) {
-  .professionGrid { grid-template-columns: 1fr; }
+  .professionCard {
+    max-width: 260px;
+    min-height: 180px;
+  }
+
+  .cardContent {
+    padding: 0 0.8rem 1.2rem 0.8rem;
+  }
+
+  .cardTitle {
+    font-size: clamp(1.1rem, 3.1vw, 1.5rem);
+    padding: 0.5rem 0.7rem;
+  }
 }

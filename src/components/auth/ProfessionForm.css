@@ -1,111 +1,183 @@
-/* Profession Form Styles */
+/* Profession Form Styles - Clean Card Design */
 
-/* Background handled by MobileProfession.css */
-/* Desktop Profession Grid */
-.professionGrid {
+/* Desktop Profession Cards */
+.professionCards {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 3rem;
   margin: 3rem 0;
-  max-width: 900px;
+  max-width: 600px;
   margin-left: auto;
   margin-right: auto;
 }
 
-.professionGrid .row.mainProfessions {
+.professionCard {
+  border: 3px solid #e9ecef;
+  border-radius: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 0.25rem;
+  min-width: 200px;
+  max-width: 250px;
+  min-height: 280px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Simple light overlay for text readability */
+.professionCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      transparent 70%,
+      rgba(255, 255, 255, 0.9) 100%);
+  z-index: 1;
+}
+
+/* Golden border for selected state */
+.professionCard.selected {
+  border-color: #D4AF37;
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.cardContent {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  z-index: 2;
+  height: 100%;
   display: flex;
+  align-items: flex-end;
   justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
+  box-sizing: border-box;
 }
 
-.professionBubble {
-  padding: 1.2rem 2.5rem;
-  border: none;
-  border-radius: 30px;
-  background-color: #f8f9fa;
+.cardTitle {
+  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  font-size: 1.1rem;
+  font-weight: 400;
+  width: 100%;
   color: #333;
-  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.431) 100%);
+  padding: 0.8rem 1rem;
+  border-radius: 0 0 12px 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  width: clamp(100px,5rem,200px) !important;
-  min-width: 180px;
-  height: auto;
-  font-weight: 400;
 }
 
-.professionBubble:hover {
-  background-color: #e9ecef;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
 
-.professionBubble.selected {
-  background-color: #000000;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Other Button - Different Style */
-.otherButton {
-  padding: 1rem 2.5rem;
-  border: 1px solid #000000;
-  border-radius: 50px !important;
-  margin-top: 0;
-  background-color: transparent;
-  color: #000000;
-  font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  text-align: center;
-  white-space: nowrap;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: 140px;
-  height: auto;
-  font-weight: 400;
-}
-
-.otherButton:hover {
-  background-color: #f8f9fa;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.otherButton.selected {
-  background-color: #000000;
-  color: #ffffff;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Mobile styles handled by MobileProfession.css */
-
-/* Profession Tablet Styles */
-@media (min-width: 769px) and (max-width: 1024px) {
-  .professionGrid {
-    gap: 2.2rem;
-    margin: 3.5rem 0;
-    max-width: 800px;
+/* Mobile Profession Cards */
+@media (max-width: 768px) {
+  .professionCards {
+    flex-direction: column;
+    gap: 2rem;
+    margin: 2rem 0;
+    max-width: 100%;
+    padding: 0 1rem;
   }
 
-  .professionGrid .row {
-    gap: 1.3rem;
+  .professionCard {
+    min-width: 280px;
+    max-width: 320px;
+    min-height: 200px;
+    width: 100%;
   }
 
-  .professionBubble {
-    padding: 1.1rem 2.2rem;
+  .cardContent {
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .cardTitle {
     font-size: 1rem;
-    border-radius: 23px;
+    padding: 0.6rem 0.8rem;
+  }
+}
+
+
+
+/* Tablet Profession Cards */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .professionCards {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    max-width: 600px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    flex-direction: row !important;
+    padding: 0 !important;
+  }
+
+  .professionCard {
+    min-width: 180px;
+    max-width: 220px;
+    min-height: 250px;
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 3px solid #e9ecef;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 0.25rem;
+  }
+
+  .professionCard.selected {
+    border-color: #D4AF37;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+  }
+
+  .professionCard::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        transparent 70%,
+        rgba(255, 255, 255, 0.9) 100%);
+    z-index: 1;
+  }
+
+  .cardContent {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  .cardTitle {
+    font-family: NyghtSerif-LightItalic, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif !important;
+    font-size: 1.05rem;
+    font-weight: 400;
+    width: 100%;
+    color: #333;
+    margin: 0;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.431) 100%);
+    padding: 0.7rem 0.9rem;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
 }

@@ -1,7 +1,55 @@
 /* Setup Group Styles - Profile, Interests, Profession pages */
 
+/* Tablet Setup Group Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .loginPage.setupGroup {
+    background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .loginPage.setupGroup .formSection.setupFormSection {
+    width: 100vw;
+    height: 100vh;
+    background: transparent;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+
+  .loginPage.setupGroup .formContainer.setupFormContainer {
+    background: #F7F3ED;
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: clamp(2rem, 3vh, 3rem) clamp(1.5rem, 2.5vh, 2.5rem);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: clamp(45rem, 65vw, 65rem);
+    max-width: 65rem;
+    min-width: 25rem;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: clamp(0.75rem, 1vh, 1.25rem);
+    position: relative;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: clamp(35rem, 55vh, 45rem);
+    margin: 0 auto;
+  }
+}
+
 /* Desktop Setup Group Styles */
-@media (min-width: 769px) {
+@media (min-width: 1025px) {
   .loginPage.setupGroup {
     background-image: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png');
     background-size: cover;

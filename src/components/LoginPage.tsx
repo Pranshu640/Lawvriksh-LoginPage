@@ -158,10 +158,7 @@ const LoginPage = () => {
   const handleProfession = (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (!selectedProfession) {
-      setError('Please select your profession.');
-      return;
-    }
+    // Allow empty profession (represents "Not a Law person")
     setIsLoggedIn(true);
   };
 

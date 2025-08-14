@@ -17,10 +17,21 @@ const ProfessionForm = ({
   onBack
 }: ProfessionFormProps) => {
   const professions = [
-    'Law Professor',
-    'Law Student',
-    'Other'
+    {
+      id: 'Law Student',
+      title: 'Law Student',
+      image: '/Graphics/LawStudent-Graphic.png'
+    },
+    {
+      id: 'Law Professional',
+      title: 'Law Professional',
+      image: '/Graphics/Lawyer-graphic.png'
+    }
   ];
+
+  const getButtonText = () => {
+    return selectedProfession ? 'Finish' : 'Not a Law person';
+  };
 
   return (
     <>
@@ -59,41 +70,32 @@ const ProfessionForm = ({
         )}
         
         <motion.div 
-          className="professionGrid"
+          className="professionCards"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.3 }}
         >
-          <div className="row mainProfessions">
-            {professions.slice(0, 2).map((profession, index) => (
-              <motion.button
-                key={profession}
-                type="button"
-                className={`professionBubble ${selectedProfession === profession ? 'selected' : ''}`}
-                onClick={() => onProfessionChange(profession)}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                {profession}
-              </motion.button>
-            ))}
-          </div>
-          
-          <motion.button
-            type="button"
-            className={`otherButton ${selectedProfession === 'Other' ? 'selected' : ''}`}
-            onClick={() => onProfessionChange('Other')}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.3, delay: 0.6 }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Other
-          </motion.button>
+          {professions.map((profession, index) => (
+            <motion.div
+              key={profession.id}
+              className={`professionCard ${selectedProfession === profession.id ? 'selected' : ''}`}
+              onClick={() => onProfessionChange(selectedProfession === profession.id ? '' : profession.id)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              style={{
+                backgroundImage: `url(${profession.image})`
+              }}
+            >
+              <div className="cardContent">
+                <div className="cardTitle">
+                  {profession.title}
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         <motion.div 
@@ -113,11 +115,11 @@ const ProfessionForm = ({
           </motion.button>
           <motion.button 
             type="submit" 
-            className="loginButton"
+            className={`loginButton ${!selectedProfession ? 'notLawPerson' : ''}`}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
-            Finish
+            {getButtonText()}
           </motion.button>
         </motion.div>
       </motion.form>

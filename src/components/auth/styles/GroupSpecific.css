@@ -52,6 +52,31 @@
   margin-right: auto;
 }
 
+/* Tablet Typography Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .loginPage.setupGroup .formContainer.setupFormContainer h2 {
+    font-size: clamp(3.5rem, 5vh, 4rem);
+    margin-bottom: clamp(1.5rem, 2vh, 2rem);
+    line-height: 1.1;
+    text-align: center;
+    width: 100%;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .loginPage.setupGroup .formContainer.setupFormContainer .subtitle {
+    font-size: clamp(0.9rem, 1.2vh, 1rem);
+    line-height: 1.6;
+    margin-bottom: clamp(2.5rem, 3vh, 3rem);
+    max-width: 550px;
+    text-align: center;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 /* Mobile Typography Adjustments */
 @media (max-width: 768px) {
   .loginPage.authGroup .formContainer.authFormContainer h2 {
