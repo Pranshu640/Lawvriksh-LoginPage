@@ -37,7 +37,7 @@ const InterestsForm = ({
       >
         What Piques Your Interest?
       </motion.h2>
-      <motion.p 
+      <motion.p
         className="subtitle"
         initial={{ opacity: 0, y: 15 }}
         animate={{ opacity: 1, y: 0 }}
@@ -45,8 +45,8 @@ const InterestsForm = ({
       >
         Tap on up to three bubbles to tell us what you'd like to see. This will help us personalize your content from day one.
       </motion.p>
-      
-      <motion.div 
+
+      <motion.div
         className="selectionCounter"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -54,15 +54,15 @@ const InterestsForm = ({
       >
         {selectedInterests.length} of 3 selected
       </motion.div>
-      
-      <motion.form 
+
+      <motion.form
         onSubmit={onSubmit}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
         {error && (
-          <motion.p 
+          <motion.p
             className="errorMessage"
             initial={{ opacity: 0, y: -10, scale: 0.95 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
@@ -72,8 +72,8 @@ const InterestsForm = ({
             {error}
           </motion.p>
         )}
-        
-        <motion.div 
+
+        <motion.div
           className="interestsGrid"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -84,7 +84,7 @@ const InterestsForm = ({
             {interests.slice(0, 4).map((interest, index) => {
               const isSelected = selectedInterests.includes(interest);
               const isDisabled = !isSelected && selectedInterests.length >= 3;
-              
+
               return (
                 <motion.button
                   key={interest}
@@ -103,13 +103,13 @@ const InterestsForm = ({
               );
             })}
           </div>
-          
+
           {/* Second row - 3 bubbles */}
           <div className="row">
             {interests.slice(4, 7).map((interest, index) => {
               const isSelected = selectedInterests.includes(interest);
               const isDisabled = !isSelected && selectedInterests.length >= 3;
-              
+
               return (
                 <motion.button
                   key={interest}
@@ -128,13 +128,13 @@ const InterestsForm = ({
               );
             })}
           </div>
-          
+
           {/* Third row - 3 bubbles */}
           <div className="row">
             {interests.slice(7, 10).map((interest, index) => {
               const isSelected = selectedInterests.includes(interest);
               const isDisabled = !isSelected && selectedInterests.length >= 3;
-              
+
               return (
                 <motion.button
                   key={interest}
@@ -153,13 +153,13 @@ const InterestsForm = ({
               );
             })}
           </div>
-          
+
           {/* Fourth row - 2 bubbles */}
           <div className="row">
             {interests.slice(10, 12).map((interest, index) => {
               const isSelected = selectedInterests.includes(interest);
               const isDisabled = !isSelected && selectedInterests.length >= 3;
-              
+
               return (
                 <motion.button
                   key={interest}
@@ -180,13 +180,13 @@ const InterestsForm = ({
           </div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="formActions"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.8 }}
         >
-          <motion.button 
+          <motion.button
             type="button"
             className="backButton"
             onClick={onBack}
@@ -195,8 +195,8 @@ const InterestsForm = ({
           >
             Back
           </motion.button>
-          <motion.button 
-            type="submit" 
+          <motion.button
+            type="submit"
             className="loginButton"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
