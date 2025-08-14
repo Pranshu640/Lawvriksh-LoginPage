@@ -1,6 +1,7 @@
 /* Mobile Profession Page Styles - Card Design */
 
 @media (max-width: 768px) {
+
   /* Profession page uses the same base layout - compact for 100vh */
   .formSection.fullWidth {
     background: url('/46536f06c88c5e0eff7a6536a7762f3bd445c0ac.png') no-repeat center center;
@@ -141,7 +142,7 @@
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     width: 100%;
-    max-width: clamp(280px, 80vw, 320px); 
+    max-width: clamp(280px, 80vw, 320px);
     position: relative;
     overflow: hidden;
     background-size: cover;
@@ -198,7 +199,7 @@
 
   /* Form actions - right-aligned with natural width */
   .formActions {
-    position: static;
+    position: relative;
     margin-top: clamp(1rem, 3.5vw, 1.5rem);
     display: flex;
     flex-direction: row;

@@ -25,7 +25,7 @@ const InterestsForm = ({
     'International Law',
     'Tax Law',
     'Common Law',
-    'Administrative Law'
+    'Administrative Law',
   ];
 
   return (
@@ -129,9 +129,9 @@ const InterestsForm = ({
             })}
           </div>
           
-          {/* Third row - 2 bubbles */}
+          {/* Third row - 3 bubbles */}
           <div className="row">
-            {interests.slice(7, 9).map((interest, index) => {
+            {interests.slice(7, 10).map((interest, index) => {
               const isSelected = selectedInterests.includes(interest);
               const isDisabled = !isSelected && selectedInterests.length >= 3;
               
@@ -145,6 +145,31 @@ const InterestsForm = ({
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.4 + (index + 7) * 0.1 }}
+                  whileHover={!isDisabled ? { scale: 1.05 } : {}}
+                  whileTap={!isDisabled ? { scale: 0.95 } : {}}
+                >
+                  {interest}
+                </motion.button>
+              );
+            })}
+          </div>
+          
+          {/* Fourth row - 2 bubbles */}
+          <div className="row">
+            {interests.slice(10, 12).map((interest, index) => {
+              const isSelected = selectedInterests.includes(interest);
+              const isDisabled = !isSelected && selectedInterests.length >= 3;
+              
+              return (
+                <motion.button
+                  key={interest}
+                  type="button"
+                  className={`interestBubble ${isSelected ? 'selected' : ''} ${isDisabled ? 'disabled' : ''}`}
+                  onClick={() => !isDisabled && onToggleInterest(interest)}
+                  disabled={isDisabled}
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.4 + (index + 10) * 0.1 }}
                   whileHover={!isDisabled ? { scale: 1.05 } : {}}
                   whileTap={!isDisabled ? { scale: 0.95 } : {}}
                 >

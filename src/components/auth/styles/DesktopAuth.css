@@ -217,7 +217,7 @@
 
   /* Desktop buttons - zoom-resistant */
   .loginButton {
-    font-family: 'NyghtSerif-LightItalic',Arial, sans-serif;
+    font-family: 'NyghtSerif-LightItalic', Arial, sans-serif;
     width: 80%;
     padding: clamp(0.875rem, 1.5vh, 1rem) clamp(1rem, 1.5vh, 1.2rem);
     border: none;
@@ -229,7 +229,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     margin: clamp(0.75rem, 1.5vh, 1rem) auto 0;
-    display: block;
   }
 
   .loginButton:hover {

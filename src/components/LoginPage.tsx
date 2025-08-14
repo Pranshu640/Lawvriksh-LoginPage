@@ -8,6 +8,7 @@ import UserSetupForm from './auth/UserSetupForm';
 import InterestsForm from './auth/InterestsForm';
 import ProfessionForm from './auth/ProfessionForm';
 import ProgressBar from './ProgressBar';
+import DevTools from './DevTools';
 import './auth/styles/BaseAuth.css';
 import './auth/styles/MobileAuth.css';
 import './auth/styles/MobilePages.css';
@@ -180,6 +181,72 @@ const LoginPage = () => {
     setError('');
     setOtp(['', '', '', '', '', '']);
     console.log('OTP resent');
+  };
+
+  // Dev Tools navigation
+  const handleDevNavigate = (page: string) => {
+    setError(''); // Clear any errors
+    
+    // Map dev tool page names to actual modes
+    const pageMap: Record<string, PageMode> = {
+      'login': 'login',
+      'signup': 'signup',
+      'otp': 'otp-verify',
+      'forgot-password': 'set-password',
+      'profile': 'user-setup',
+      'interests': 'interests',
+      'profession': 'profession'
+    };
+    
+    const targetMode = pageMap[page];
+    if (targetMode) {
+      setMode(targetMode);
+      
+      // Set some default values for testing
+      if (targetMode === 'otp-verify' || targetMode === 'set-password') {
+        setEmail('test@example.com');
+      }
+      if (targetMode === 'user-setup' || targetMode === 'interests' || targetMode === 'profession') {
+        setEmail('test@example.com');
+        setUserName('Test User');
+      }
+      if (targetMode === 'profession') {
+        setSelectedInterests(['Technology', 'Business']);
+      }
+    }
+  };
+
+  // Get current page name for dev tools
+  const getCurrentPageName = () => {
+    const modeMap: Record<PageMode, string> = {
+      'login': 'login',
+      'signup': 'signup',
+      'otp-verify': 'otp',
+      'social-confirm': 'otp',
+      'set-password': 'forgot-password',
+      'user-setup': 'profile',
+      'interests': 'interests',
+      'profession': 'profession'
+    };
+    return modeMap[mode] || mode;
+  };
+
+  // Dev Tools actions
+  const handleDevAction = (action: string) => {
+    if (action === 'reset') {
+      // Reset all form data
+      setEmail('');
+      setPassword('');
+      setConfirmPassword('');
+      setUserName('');
+      setSelectedInterests([]);
+      setSelectedProfession('');
+      setOtp(['', '', '', '', '', '']);
+      setRememberMe(false);
+      setError('');
+      setIsLoggedIn(false);
+      setMode('login');
+    }
   };
 
   // Progress calculation
@@ -362,6 +429,12 @@ const LoginPage = () => {
       animate="visible"
       variants={containerVariants}
     >
+      {/* Dev Tools - only shows in development */}
+      <DevTools 
+        onNavigate={handleDevNavigate}
+        onAction={handleDevAction}
+        currentPage={getCurrentPageName()}
+      />
       {/* Progress bar moved inside form container */}
 
       <AnimatePresence>
